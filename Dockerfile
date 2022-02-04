@@ -1,4 +1,5 @@
-FROM ethereum/client-go:alltools-release-1.10
+FROM ethereum/client-go:release-1.10
+# FROM ethereum/client-go:alltools-release-1.10
 
 WORKDIR app
 RUN mkdir blockchain && chmod 1777 blockchain -R
