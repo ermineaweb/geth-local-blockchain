@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  truffle:
+    build:
+      context: ./truffle
+      dockerfile: Dockerfile
+    volumes:
+      - ~/workspace/pvt-bc/truffle/app:/app
+
+  geth:
+    build:
+      context: ./geth
+      dockerfile: Dockerfile
+    volumes:
+      - ~/workspace/pvt-bc/geth/local:/app
