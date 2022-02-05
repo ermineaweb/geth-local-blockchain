@@ -1,3 +1,6 @@
 #!/bin/sh
 
-docker run -p 9545:9545 truffle:latest 
+docker run -it \
+--net host \
+-v ~/workspace/pvt-bc/truffle/app:/app \
+truffle:latest "$@"

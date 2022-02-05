@@ -8,4 +8,5 @@ COPY app ./
 EXPOSE 9545
 
 ENTRYPOINT ["truffle"]
-CMD ["console"]
+CMD ["develop"]
+# ENTRYPOINT ["bash"]
