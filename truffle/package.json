@@ -1,0 +1,16 @@
+{
+  "name": "truffle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@chainsafe/truffle-plugin-abigen": "0.0.2",
+    "@openzeppelin/contracts": "^4.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC"
+}

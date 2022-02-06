@@ -1,2 +1,5 @@
 data
 local
+mainnet
+node_modules
+build

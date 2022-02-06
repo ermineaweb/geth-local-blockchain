@@ -3,7 +3,7 @@ FROM node:14-slim
 RUN npm install -g truffle
 
 WORKDIR app
-COPY app ./
+COPY . ./
 
 EXPOSE 9545
 
