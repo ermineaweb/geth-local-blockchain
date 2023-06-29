@@ -1,12 +1,12 @@
-FROM ethereum/client-go:release-1.10
+FROM ethereum/client-go:release-1.11
 
 WORKDIR app
+RUN mkdir -p data
 
-COPY scripts ./scripts
+# COPY scripts ./scripts
+COPY keystore ./keystore
 
-COPY genesis-proof-of-authority.json ./config/genesis.json
+COPY genesis-proof-of-work.json ./config/genesis.json
 RUN geth --datadir ./data init ./config/genesis.json
 
-ENTRYPOINT ["geth", "--http"]
-# ENTRYPOINT ["geth", "--datadir", "/app/data"]
-# CMD ["--dev", "--dev.period", "14", "--http"]
+ENTRYPOINT ["geth"]

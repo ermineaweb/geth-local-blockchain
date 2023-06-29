@@ -1,5 +1,7 @@
 #!/bin/sh
 
+LOCAL_PATH=$(pwd)
+
 # docker run -it \
 # -v ~/workspace/pvt-bc/blockchain:/app/blockchain \
 # -p "8545:8545" \
@@ -19,16 +21,22 @@
 # --password="/app/pass"
 # --dev.period 14 \
 
-# run geth with arguments
+# -v "$LOCAL_PATH"/keystore:/app/data/keystore \
+# -v "$LOCAL_PATH"/data:/app/data \
 docker run -it --net host \
--v ~/workspace/pvt-bc/geth/data:/app/data \
--v ~/workspace/pvt-bc/geth/keystore:/app/data/keystore \
 geth:latest \
 --datadir "/app/data" \
+--keystore "/app/keystore" \
+--networkid 12345 \
 --dev \
 --dev.period 14 \
+--http \
 
+# --mine \
+# --miner.etherbase="0x17ff1a448556095ce8aa4fd0b3d2229397653667" \
+# --http.api eth,web3,net,miner \
+# --http.corsdomain "http://remix.ethereum.org" \
 # --allow-insecure-unlock \
-# --unlock="0x7231a131c9f25c8ffa24396a4767c0b858e4f205" \
+
 
 # "$@"

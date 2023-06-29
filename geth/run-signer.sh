@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-# run console with no logs
 docker run -it --net host \
 geth:latest \
 --allow-insecure-unlock \

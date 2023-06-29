@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# run geth with arguments
+LOCAL_PATH=$(pwd)
+
 docker run -it --net host \
--v ~/workspace/pvt-bc/geth/mainnet:/app/mainnet \
+-v "$LOCAL_PATH"/mainnet:/app/mainnet \
 geth:latest \
 --datadir "/app/mainnet" \
 "$@"

@@ -12,12 +12,6 @@
 
 ### Commands
 
-Connect to the blockchain
-
-```bash
-./run.sh attach
-```
-
 Send ether
 
 ```javascript
