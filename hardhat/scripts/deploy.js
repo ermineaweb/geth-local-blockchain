@@ -1,6 +1,6 @@
 // scripts/deploy.js
 async function main() {
-  const deployedContract = await hre.ethers.deployContract("Box");
+  const deployedContract = await hre.ethers.deployContract("Sum");
   await deployedContract.waitForDeployment();
   console.log("SimpleStorage Contract Address:", deployedContract.target);
 }

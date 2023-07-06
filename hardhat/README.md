@@ -15,8 +15,15 @@ npx hardhat console --network localhost
 ```
 
 ```javascript
-const Box = await ethers.getContractFactory('Box');
-const box = await Box.attach('0x5FbDB2315678afecb367f032d93F642f64180aa3');
-await box.set(42);
-(await box.get()).toString();
+const Sum = await ethers.getContractFactory("Sum");
+const sum = await Sum.attach("0x5FbDB2315678afecb367f032d93F642f64180aa3");
+await sum.sum(3, 2);
+(await sum.get()).toString();
+```
+
+```javascript
+const sumEvent = sum.voteCast();
+sumEvent.watch(function (err, result) {
+  console.log(result);
+});
 ```
